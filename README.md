@@ -1,107 +1,104 @@
-# Specter AI
+# Klayr
 
-> AI interview co-pilot that watches your screen and streams answers in real-time — invisibly.
+> The answer, before you finish nodding.
 
-Specter is a desktop app that silently monitors your screen during live job interviews, detects questions the moment they appear, and instantly streams spoken-ready answers. The interviewer never sees it.
+Klayr is an AI interview co-pilot for your desktop. It listens to your live interview, shows a short, accurate answer in your own voice (about two seconds after the question), and keeps your resume in mind so answers use your real projects and numbers.
+
+**Website:** [klayr.tattvamind.com](https://klayr.tattvamind.com) · **Status:** Beta (Mac and Windows)
 
 ---
 
 ## Download
 
-Go to the [Releases](../../releases) page and download the latest version for your platform:
+Get the latest build from the [Releases](../../releases) page. Beta versions are marked **Pre-release**.
 
 | Platform | File |
 |----------|------|
-| macOS (Apple Silicon) | `Specter-x.x.x-arm64.dmg` |
-| macOS (Intel) | `Specter-x.x.x-x64.dmg` |
-| Windows | `Specter-Setup-x.x.x.exe` |
-| Windows (portable) | `Specter-x.x.x-portable.exe` |
-| Linux | `Specter-x.x.x.AppImage` |
+| macOS, Apple Silicon (M1 or later) | `KlayrAI_x.x.x_aarch64.dmg` |
+| macOS, Intel | `KlayrAI_x.x.x_x64.dmg` |
+| Windows (recommended) | `KlayrAI_x.x.x_x64-setup.exe` |
+| Windows (managed or enterprise installs) | `KlayrAI_x.x.x_x64_en-US.msi` |
+| Linux | `.AppImage` or `.deb` |
+
+Exact file names can differ slightly between versions; pick the one that matches your system.
 
 ---
+
 ## Install
+
+Beta builds are not code-signed yet, so macOS and Windows ask you to confirm the first launch once. It is safe to continue.
 
 ### macOS
 
-1. Open the `.dmg` and drag **Specter** to your Applications folder.
-2. On first launch macOS may show a **"damaged app"** warning — this is Gatekeeper blocking unsigned apps, not an actual problem.
-3. Run this once in Terminal to fix it:
-```
-xattr -cr "/Applications/Specter.app"
-```
-4. Open the app normally.
-
-> **Alternative:** Go to **System Settings → Privacy & Security** and click **Open Anyway**.
-
----
+1. Open the `.dmg` and drag **KlayrAI** to **Applications**.
+2. If macOS says the app cannot be verified or is damaged, right-click the app and choose **Open**, or go to **System Settings → Privacy & Security** and click **Open Anyway**.
+3. Alternatively, run this once in Terminal:
+   ```
+   xattr -cr /Applications/KlayrAI.app
+   ```
+4. Allow **Microphone** and **Screen Recording** when asked.
 
 ### Windows
 
-1. Run `Specter-Setup-x.x.x.exe`.
-2. If Windows SmartScreen shows a warning, click **More info → Run anyway**.
-3. Follow the installer steps.
-
----
+1. Run the installer.
+2. If you see **Windows protected your PC**, click **More info → Run anyway**.
+3. Allow microphone access when asked.
 
 ### Linux
 
-1. Make the file executable:
 ```
-chmod +x Specter-x.x.x.AppImage
-```
-2. Run it:
-```
-./Specter-x.x.x.AppImage
+chmod +x KlayrAI_*.AppImage
+./KlayrAI_*.AppImage
 ```
 
 ---
 
-## Key Features
+## What it does
 
-- **Multi-monitor scan** — detects questions across all connected screens simultaneously
-- **Race Mode** — two AI providers fire at once; first token wins (~40% faster)
-- **Multi-panel workspaces** — up to 5 independent panels, each with its own ask bar
-- **Live audio transcript** — captures interviewer voice from Zoom, Meet, or Teams
-- **Embedded code runner** — Python, JS, Java, C++, Go, Rust via Piston API
-- **Bring-your-own-key** — paste your own Gemini, OpenAI, or Anthropic API key
-- **Content protection** — invisible to screen share and recording software
-- **Session debrief** — post-session AI scoring with strengths and study topics
+- **Live answers:** hears the interviewer through your system audio and streams an answer as soon as the question ends.
+- **Your resume, your voice:** answers draw on your resume and the job description. Stories that are not in your resume are clearly tagged.
+- **Interview types:** software engineering, behavioral, coding, system design, data science and product management.
+- **Coding questions:** working code with honest complexity, plus a built-in code runner.
+- **System design:** structured answers with diagrams.
+- **Floating panel:** a small always-on-top window for quick questions during a call.
+- **Screen scan:** reads a question off your screen when it is not spoken.
+- **Practice mode:** mock interviews with a score and feedback after each round.
+- **Session history:** replay past sessions, with analytics.
+- **Light and dark themes.**
 
----
-
-## Supported AI Providers
-
-| Provider | Model |
-|----------|-------|
-| Google Gemini | gemini-2.0-flash (default) |
-| OpenAI | gpt-4o |
-| Anthropic | claude-haiku-4-5 |
+Klayr provides the AI. There is no API key to set up.
 
 ---
 
-## Interview Roles
+## Pricing
 
-Software Engineer · HR / Behavioral · Coding / DSA · System Design · Data Science · Product Manager
+Your first hour is free. After that you can subscribe to **Pro** (12 hours of live sessions per month) or buy one-time credit packs that never expire. 1 credit is 1 minute of live session. Current prices are on the [pricing page](https://klayr.tattvamind.com/pricing).
+
+---
+
+## Privacy
+
+Klayr streams live interview audio to a speech-to-text provider (Deepgram) and sends transcript text, screen content you scan, and your resume and job text to AI providers to write answers. Account and usage data are stored on AWS. We do not sell your data. Read the details in the [Privacy Policy](https://klayr.tattvamind.com/privacy) and [Terms](https://klayr.tattvamind.com/terms). You are responsible for following the rules of your interviewer and employer and the laws on recording where you are.
 
 ---
 
 ## Requirements
 
-- macOS 12+, Windows 10+, or Linux (Ubuntu 20.04+)
-- Internet connection (for AI responses)
-- API key for at least one supported provider
+- macOS 13 or later, Windows 10 or later (64-bit), or a recent 64-bit Linux desktop
+- An internet connection
+- A Klayr account (email, Google or LinkedIn)
 
 ---
 
-## Auto-Update
+## Updates
 
-Specter checks for updates automatically on launch. You'll be notified when a new version is available.
+Klayr checks for updates automatically and installs them when you approve.
 
 ---
 
 ## Support
 
-For issues or feature requests, contact [chaithanyareddy@tattvamind.com](mailto:chaithanyareddy@tattvamind.com)
+Questions or bugs: see [klayr.tattvamind.com/support](https://klayr.tattvamind.com/support) or email [support@tattvamind.com](mailto:support@tattvamind.com). Please include your Klayr version, operating system, and the steps that led to the problem.
 
 ---
 
